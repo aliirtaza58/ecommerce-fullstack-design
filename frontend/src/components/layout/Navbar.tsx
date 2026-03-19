@@ -1,8 +1,23 @@
 "use client";
+
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { ShoppingCart, Menu, Search, User } from "lucide-react";
 import Link from "next/link";
 
 export default function Navbar() {
+  const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // This function runs when the user presses Enter or clicks the search icon
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault(); // Prevents the page from refreshing
+    if (searchTerm.trim()) {
+      // Navigates to the category page with the search query attached
+      router.push(`/category/all?search=${searchTerm}`);
+    }
+  };
+
   return (
     <nav className="bg-white border-b sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,14 +29,18 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Search Bar (Hidden on Mobile) */}
-          <div className="hidden md:flex flex-1 max-w-2xl mx-8 relative">
+          <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-2xl mx-8 relative">
             <input 
               type="text" 
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search products, brands and categories..." 
               className="w-full border border-gray-300 rounded-lg py-2 pl-4 pr-10 focus:outline-none focus:border-blue-500"
             />
-            <Search className="absolute right-3 top-2.5 text-gray-400 h-5 w-5" />
-          </div>
+            <button type="submit" className="absolute right-3 top-2.5 text-gray-400 hover:text-blue-600 transition">
+              <Search className="h-5 w-5" />
+            </button>
+          </form>
 
           {/* Right Icons (Cart & User) */}
           <div className="flex items-center gap-6">
@@ -38,14 +57,18 @@ export default function Navbar() {
         
         {/* Mobile Search Bar (Only visible on mobile) */}
         <div className="md:hidden pb-4">
-            <div className="relative">
+            <form onSubmit={handleSearch} className="relative">
                 <input 
-                type="text" 
-                placeholder="Search..." 
-                className="w-full border border-gray-300 rounded-lg py-2 pl-4 pr-10 bg-gray-50 focus:outline-none"
+                  type="text" 
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  placeholder="Search..." 
+                  className="w-full border border-gray-300 rounded-lg py-2 pl-4 pr-10 bg-gray-50 focus:outline-none focus:border-blue-500"
                 />
-                <Search className="absolute right-3 top-2.5 text-gray-400 h-5 w-5" />
-            </div>
+                <button type="submit" className="absolute right-3 top-2.5 text-gray-400 hover:text-blue-600 transition">
+                  <Search className="h-5 w-5" />
+                </button>
+            </form>
         </div>
       </div>
     </nav>

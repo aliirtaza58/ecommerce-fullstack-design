@@ -6,7 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "E-Commerce Web App",
+  title: "E-Commerce Web",
   description: "Modern E-Commerce Frontend",
 };
 
