@@ -1,0 +1,127 @@
+[00:00:25.841] Server  LOG     ✓ Ready in 19.3s
+[00:00:28.936] Server  LOG     ○ Compiling / ...
+[00:00:37.924] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:57.176] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:22:53.805] Server  LOG     ✓ Compiled in 11.7s
+[01:22:55.119] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <img src=... alt=... className=... onError={function onError}>
+                                             ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[01:22:55.430] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <img src=... alt=... className=... onError={function onError}>
+                                             ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[01:22:55.741] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <img src=... alt=... className=... onError={function onError}>
+                                             ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[01:22:56.381] Browser ERROR   uncaughtError: Error: Event handlers cannot be passed to Client Component props.
+  <img src=... alt=... className=... onError={function onError}>
+                                             ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[01:22:58.860] Server  LOG     ○ Compiling /_not-found/page ...
+[01:23:04.968] Server  LOG     ✓ Compiled in 257ms
+[01:23:05.582] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:23:06.936] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <img src=... alt=... className=... onError={function onError}>
+                                             ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[01:23:07.445] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <img src=... alt=... className=... onError={function onError}>
+                                             ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[01:23:08.227] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <img src=... alt=... className=... onError={function onError}>
+                                             ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[01:23:09.267] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:23:10.389] Browser ERROR   uncaughtError: Error: Event handlers cannot be passed to Client Component props.
+  <img src=... alt=... className=... onError={function onError}>
+                                             ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[01:23:25.919] Server  LOG     ✓ Compiled in 1441ms
+[01:23:26.379] Browser ERROR   ./src/components/layout/Navbar.tsx:2:10
+Ecmascript file had an error
+  1 | // At the top of the file, add:
+> 2 | import { useRouter } from "next/navigation";
+    |          ^^^^^^^^^
+  3 | import { useState } from "react";
+  4 |
+  5 | // Inside the Navbar component:
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/layout/Navbar.tsx
+    ./src/app/layout.tsx
+[01:23:26.379] Browser ERROR   ./src/components/layout/Navbar.tsx:3:10
+Ecmascript file had an error
+  1 | // At the top of the file, add:
+  2 | import { useRouter } from "next/navigation";
+> 3 | import { useState } from "react";
+    |          ^^^^^^^^
+  4 |
+  5 | // Inside the Navbar component:
+  6 | const router = useRouter();
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/layout/Navbar.tsx
+    ./src/app/layout.tsx
+[01:23:26.379] Browser ERROR   ./src/app/layout.tsx:4:1
+Export default doesn't exist in target module
+  2 | import { Inter } from "next/font/google";
+  3 | import "./globals.css";
+> 4 | import Navbar from "@/components/layout/Navbar";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const inter = Inter({ subsets: ["latin"] });
+  7 |
+
+The export default was not found in module [project]/src/components/layout/Navbar.tsx [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[01:25:47.495] Server  LOG     ✓ Compiled in 715ms
+[01:25:47.613] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:25:49.696] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <img src=... alt=... className=... onError={function onError}>
+                                             ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[01:25:50.736] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <img src=... alt=... className=... onError={function onError}>
+                                             ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[01:25:51.618] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <img src=... alt=... className=... onError={function onError}>
+                                             ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[01:25:52.173] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:25:52.749] Browser ERROR   uncaughtError: Error: Event handlers cannot be passed to Client Component props.
+  <img src=... alt=... className=... onError={function onError}>
+                                             ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[01:29:31.124] Server  LOG     ✓ Compiled in 61ms
+[01:29:32.401] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:29:51.151] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:33:50.191] Server  LOG     ✓ Compiled in 152ms
+[01:34:50.154] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:35:04.837] Server  WARN    Error: Route "/category/[slug]" used `searchParams.search`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:35:04.947] Server  WARN    Error: Route "/category/[slug]" used `searchParams.search`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:35:05.081] Server  WARN    Error: Route "/category/[slug]" used `searchParams.search`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:35:06.877] Server  WARN    Error: Route "/category/[slug]" used `searchParams.search`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:35:21.034] Server  WARN    Error: Route "/category/[slug]" used `searchParams.search`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:35:21.281] Server  WARN    Error: Route "/category/[slug]" used `searchParams.search`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:35:27.866] Server  WARN    Error: Route "/category/[slug]" used `searchParams.search`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:35:28.288] Server  WARN    Error: Route "/category/[slug]" used `searchParams.search`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:36:07.682] Server  WARN    Error: Route "/category/[slug]" used `searchParams.search`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:36:08.088] Server  WARN    Error: Route "/category/[slug]" used `searchParams.search`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:39:42.171] Server  WARN    Error: Route "/category/[slug]" used `searchParams.search`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:39:42.427] Server  WARN    Error: Route "/category/[slug]" used `searchParams.search`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:39:44.056] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
