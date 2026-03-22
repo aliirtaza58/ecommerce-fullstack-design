@@ -1,43 +1,67 @@
-import Link from "next/link";
+import HeroSection from "@/components/home/HeroSection";
+import DealsSection from "@/components/home/DealsSection";
+import CategoryGridSection from "@/components/home/CategoryGridSection";
+import RecommendedSection from "@/components/home/RecommendedSection";
 
-// Fetch data dynamically from the backend
-async function getFeaturedProducts() {
-  const res = await fetch("http://localhost:5000/api/products", { cache: 'no-store' });
-  if (!res.ok) throw new Error("Failed to fetch products");
-  return res.json();
+export const revalidate = 0; // Disable static caching for dynamic data
+
+async function getProducts() {
+  try {
+    const res = await fetch("http://localhost:5000/api/products", { cache: 'no-store' });
+    if (!res.ok) return [];
+    return res.json();
+  } catch (err) {
+    console.error("Error fetching products:", err);
+    return [];
+  }
 }
 
 export default async function Home() {
-  const products = await getFeaturedProducts();
+  const products = await getProducts();
+  
+  // Create sample arrays if API is empty for UI testing
+  let safeProducts = products.length > 0 ? products : Array(10).fill({
+    _id: "placeholder",
+    name: "Sample Product",
+    price: 19.99,
+    description: "Sample description"
+  });
+
+  // Assign specific images to products based on their names
+  safeProducts = safeProducts.map((p: any) => {
+    let img = "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=300&q=80"; // default fallback
+    if (p.name.toLowerCase().includes("laptop")) img = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&q=80";
+    if (p.name.toLowerCase().includes("smartphone")) img = "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&q=80";
+    if (p.name.toLowerCase().includes("headphone") || p.name.toLowerCase().includes("earbud")) img = "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80";
+    if (p.name.toLowerCase().includes("watch")) img = "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=300&q=80";
+    if (p.name.toLowerCase().includes("camera")) img = "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300&q=80";
+    
+    return { ...p, image: img };
+  });
+
+  const electronics = safeProducts.slice(0, 8);
+  const outdoor = safeProducts.slice(0, 8).reverse();
 
   return (
-    <div className="space-y-8">
-      {/* Hero Banner (Same as Week 1) */}
-      <div className="bg-blue-600 rounded-xl p-8 md:p-16 text-white flex flex-col md:flex-row items-center justify-between">
-        <div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">Latest Tech Deals</h1>
-          <p className="mb-6">Get up to 40% off on selected items</p>
-          <Link href="/category/all" className="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold">Shop Now</Link>
-        </div>
-        <div className="mt-8 md:mt-0 w-full md:w-1/3 h-48 bg-blue-400 rounded-lg"></div>
-      </div>
-
-      {/* Dynamic Featured Products Grid */}
-      <div>
-        <h2 className="text-2xl font-bold mb-6">Recommended for you</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          {products.map((item: any) => (
-            <Link href={`/product/${item._id}`} key={item._id} className="bg-white border rounded-lg p-4 hover:shadow-lg transition flex flex-col">
-              {/* Replace the bg-gray-200 block with an actual img tag later */}
-              <div className="w-full h-40 bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-500 overflow-hidden">
-                <img src={item.image} alt={item.name} className="object-cover w-full h-full" />
-              </div>
-              <h3 className="text-sm md:text-md font-medium text-gray-800 line-clamp-2">{item.name}</h3>
-              <p className="text-lg font-bold text-blue-600 mt-auto pt-2">${item.price.toFixed(2)}</p>
-            </Link>
-          ))}
-        </div>
-      </div>
+    <div className="bg-[#f7f9fa] pt-4 md:pt-6 pb-12 w-full px-0 sm:px-4">
+      {/* Container spacing managed mostly inside components or here */}
+      <HeroSection />
+      
+      <DealsSection />
+      
+      <CategoryGridSection 
+        title="Home and outdoor" 
+        imageSrc="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=300&q=80"
+        items={outdoor}
+      />
+      
+      <CategoryGridSection 
+        title="Consumer electronics and gadgets" 
+        imageSrc="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=300&q=80"
+        items={electronics}
+      />
+      
+      <RecommendedSection products={safeProducts} />
     </div>
   );
 }
