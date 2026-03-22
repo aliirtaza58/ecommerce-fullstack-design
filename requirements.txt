@@ -1,0 +1,29 @@
+
+# --- Runtime ---
+# Node.js >= 18.x  
+# npm >= 9.x       
+
+# --- Cloud Services ---
+# MongoDB Atlas (free tier works)  -->  
+
+
+# Backend dependencies  
+express
+mongoose
+bcryptjs
+jsonwebtoken
+dotenv
+cors
+
+# Frontend dependencies  
+next
+react
+react-dom
+tailwindcss
+typescript
+lucide-react
+
+# Environment variables required  (create backend/.env)
+# PORT=5000
+# MONGO_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/<dbname>
+# JWT_SECRET=<your_secret_key>
