@@ -15,11 +15,6 @@ frontend/out/
 .env.production.local
 backend/.env
 
-# MacOS
-.DS_Store
-
-# Vercel
-.vercel
 
 # Editor directories and files
 .idea
