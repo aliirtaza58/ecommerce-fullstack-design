@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import { Zap, ArrowRight } from "lucide-react";
 
 const deals = [
-  { name: "Smart Watches", image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=300&q=80", discount: "-25%", badge: "🔥 Hot" },
-  { name: "Laptops", image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&q=80", discount: "-15%", badge: "⚡ Deal" },
-  { name: "GoPro Cameras", image: "https://images.unsplash.com/photo-1565992441121-4367c2967103?w=300&q=80", discount: "-40%", badge: "💥 Epic" },
-  { name: "Headphones", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80", discount: "-25%", badge: "🎧 Top" },
-  { name: "DSLR Cameras", image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300&q=80", discount: "-30%", badge: "📸 Sale" },
-  { name: "Smartphones", image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&q=80", discount: "-20%", badge: "📱 New" },
+  { name: "Smart Watches", image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=300&q=80", discount: "-25%", badge: "Hot" },
+  { name: "Laptops", image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&q=80", discount: "-15%", badge: "Deal" },
+  { name: "GoPro Cameras", image: "https://images.unsplash.com/photo-1565992441121-4367c2967103?w=300&q=80", discount: "-40%", badge: "Epic" },
+  { name: "Headphones", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80", discount: "-25%", badge: "Top" },
+  { name: "DSLR Cameras", image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300&q=80", discount: "-30%", badge: "Sale" },
+  { name: "Smartphones", image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&q=80", discount: "-20%", badge: "New" },
 ];
 
 function useCountdown(targetSeconds: number) {

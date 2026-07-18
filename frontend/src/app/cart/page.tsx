@@ -210,7 +210,7 @@ export default function CartPage() {
                 <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 16 }}>
                   {[
                     ["Subtotal", `$${subtotal.toFixed(2)}`],
-                    ["Shipping", shipping === 0 ? "FREE 🎉" : `$${shipping.toFixed(2)}`],
+                    ["Shipping", shipping === 0 ? "FREE" : `$${shipping.toFixed(2)}`],
                     ["Tax (est.)", `$${(subtotal * 0.08).toFixed(2)}`],
                   ].map(([k, v]) => (
                     <div key={k} style={{ display: "flex", justifyContent: "space-between", fontSize: "0.875rem" }}>
@@ -245,7 +245,7 @@ export default function CartPage() {
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 30px rgba(16,185,129,0.5)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(16,185,129,0.4)"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}
                 >
-                  🔒 Proceed to Checkout
+                  Proceed to Checkout
                 </button>
 
                 <div style={{ marginTop: 12, textAlign: "center" }}>
@@ -256,7 +256,7 @@ export default function CartPage() {
 
                 {/* Trust */}
                 <div style={{ marginTop: 16, paddingTop: 14, borderTop: "1px solid var(--border-subtle)", display: "flex", justifyContent: "center", gap: 16 }}>
-                  {["🔒 Secure", "🚚 Fast Ship", "↩️ Easy Returns"].map(t => (
+                  {["Secure", "Fast Ship", "Easy Returns"].map(t => (
                     <span key={t} style={{ fontSize: "0.72rem", color: "var(--text-muted)" }}>{t}</span>
                   ))}
                 </div>

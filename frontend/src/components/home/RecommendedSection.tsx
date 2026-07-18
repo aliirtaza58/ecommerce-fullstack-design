@@ -118,7 +118,7 @@ export default function RecommendedSection({ products }: { products: any[] }) {
                     fontSize: "0.6rem", fontWeight: 800, color: "#fff",
                     letterSpacing: "0.05em", textTransform: "uppercase",
                   }}>
-                    {i === 0 ? "🔥 Hot" : i === 1 ? "⚡ New" : "💫 Pick"}
+                    {i === 0 ? "Hot" : i === 1 ? "New" : "Pick"}
                   </div>
                 )}
 

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
-import { Mail, Lock, Eye, EyeOff, Zap, ArrowRight, ShieldCheck } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, Zap, ArrowRight, ShieldCheck, Check } from "lucide-react";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -87,9 +87,16 @@ export default function LoginPage() {
 
           {/* Features */}
           <div style={{ marginTop: 32, display: "flex", flexDirection: "column", gap: 12 }}>
-            {["🔥 Exclusive member-only deals", "🚀 Track orders in real-time", "❤️ Save your wishlists"].map(f => (
-              <div key={f} style={{ padding: "10px 20px", borderRadius: 10, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.65)", fontSize: "0.85rem", textAlign: "left" }}>
-                {f}
+            {[
+              "Exclusive member-only deals",
+              "Track orders in real-time",
+              "Save your wishlists",
+            ].map(f => (
+              <div key={f} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 20px", borderRadius: 10, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", textAlign: "left" }}>
+                <div style={{ width: 18, height: 18, borderRadius: "50%", background: "rgba(16,185,129,0.2)", border: "1px solid rgba(16,185,129,0.4)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <Check size={10} color="#10b981" />
+                </div>
+                <span style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.65)" }}>{f}</span>
               </div>
             ))}
           </div>

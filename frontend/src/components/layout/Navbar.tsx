@@ -27,7 +27,7 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { label: "Hot Deals", href: "#", badge: "🔥" },
+    { label: "Hot Deals", href: "#" },
     { label: "Electronics", href: "#" },
     { label: "Fashion", href: "#" },
     { label: "Home & Living", href: "#" },
@@ -60,7 +60,7 @@ export default function Navbar() {
         color: "#fff",
         letterSpacing: "0.03em",
       }}>
-        🎉 Free shipping on orders over $49 &nbsp;·&nbsp; Use code <strong>NEXSHOP15</strong> for 15% off
+        Free shipping on orders over $49 &nbsp;·&nbsp; Use code <strong>NEXSHOP15</strong> for 15% off
       </div>
 
       {/* ── DESKTOP TOP ROW ── */}
@@ -241,10 +241,10 @@ export default function Navbar() {
           </nav>
           <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: "0.8rem", color: "var(--text-muted)" }}>
             <button style={{ display: "flex", alignItems: "center", gap: 4, background: "none", border: "none", cursor: "pointer", color: "var(--text-muted)", fontSize: "0.8rem" }}>
-              🇺🇸 English, USD <ChevronDown size={13} />
+              English, USD <ChevronDown size={13} />
             </button>
             <button style={{ display: "flex", alignItems: "center", gap: 4, background: "none", border: "none", cursor: "pointer", color: "var(--text-muted)", fontSize: "0.8rem" }}>
-              Ship to 🌍 <ChevronDown size={13} />
+              Ship to World <ChevronDown size={13} />
             </button>
           </div>
         </div>

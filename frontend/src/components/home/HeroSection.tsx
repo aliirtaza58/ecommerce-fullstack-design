@@ -1,18 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Zap, Tag, ShoppingBag } from "lucide-react";
+import { ArrowRight, Zap, Tag, ShoppingBag, User } from "lucide-react";
 
 const categories = [
-  { label: "Automobiles", emoji: "🚗" },
-  { label: "Clothes & Wear", emoji: "👗" },
-  { label: "Home Interiors", emoji: "🛋️" },
-  { label: "Computer & Tech", emoji: "💻" },
-  { label: "Tools & Equipment", emoji: "🔧" },
-  { label: "Sports & Outdoor", emoji: "⚽" },
-  { label: "Animal & Pets", emoji: "🐾" },
-  { label: "Machinery", emoji: "⚙️" },
-  { label: "More Categories", emoji: "📦" },
+  { label: "Automobiles" },
+  { label: "Clothes & Wear" },
+  { label: "Home Interiors" },
+  { label: "Computer & Tech" },
+  { label: "Tools & Equipment" },
+  { label: "Sports & Outdoor" },
+  { label: "Animal & Pets" },
+  { label: "Machinery" },
+  { label: "More Categories" },
 ];
 
 export default function HeroSection() {
@@ -59,7 +59,6 @@ export default function HeroSection() {
                 }
               }}
             >
-              <span style={{ fontSize: "1.05rem" }}>{cat.emoji}</span>
               <span>{cat.label}</span>
               <ArrowRight size={13} style={{ marginLeft: "auto", opacity: 0.5 }} />
             </Link>
@@ -203,8 +202,8 @@ export default function HeroSection() {
             backdropFilter: "blur(12px)",
           }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
-              <div style={{ width: 42, height: 42, borderRadius: "50%", background: "linear-gradient(135deg,#6366f1,#8b5cf6)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ fontSize: "1.1rem" }}>👋</span>
+              <div style={{ width: 42, height: 42, borderRadius: "50%", background: "linear-gradient(135deg,#6366f1,#8b5cf6)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>
+                <User size={20} />
               </div>
               <div>
                 <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--text-primary)" }}>Welcome back!</p>
